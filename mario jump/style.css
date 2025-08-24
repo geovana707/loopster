@@ -1,0 +1,126 @@
+*{margin:0;padding:0;box-sizing:border-box}
+body,html{height:100%;font-family:Arial, Helvetica, sans-serif;background:#7fb7c5}
+
+.jogo{
+  width:90%;
+  max-width:900px;
+  height:480px;
+  margin:40px auto;
+  position:relative;
+  overflow:hidden;
+  background: linear-gradient(#119797,#4a7092);
+  border-radius:8px;
+  border-bottom:5px solid #1e8b4f;
+}
+
+
+.hud{position:absolute; top:10px; right:20px; z-index:6; color:#fff; font-weight:bold; font-size:20px}
+.hud #score{background:rgba(0,0,0,0.25); padding:6px 10px; border-radius:6px}
+
+
+.mario{position:absolute; bottom:0; left:50px; width:100px; z-index:5; user-select:none;}
+
+
+.obstaculos{position:absolute; 
+    bottom:0; left:100%; 
+    width:200px; z-index:4;
+    animation: obstaculos 1s infinite linear; 
+    animation-play-state:paused;
+}
+
+
+.nuvens{position:absolute; 
+    top:20px; 
+    right:-30%; 
+    width:300px; z-index:2; 
+    animation: nuvens 18s infinite linear; 
+    animation-play-state:paused; 
+    opacity:0.9
+}
+
+
+.pulo{
+     animation: pulo 500ms ease-out;
+    }
+
+
+.overlay{
+  position:fixed; inset:0; display:flex; flex-direction:column; align-items:center; justify-content:center;
+  background: linear-gradient(rgba(10,10,10,0.45), rgba(0,0,0,0.25));
+  color:#fff; z-index:10; text-align:center;
+}
+.overlay h1{font-size:3rem;margin-bottom:10px}
+.overlay p{margin-bottom:20px; opacity:0.9}
+.btn{background:blueviolet;color:aliceblue;border:none;padding:12px 22px;border-radius:10px;cursor:pointer;font-size:1rem}
+.overlay.final{display:none} 
+
+.moeda {
+  position: absolute;
+  bottom: 180px; 
+  left: 350px;    
+  width: 100px;
+  z-index: 6;
+  user-select: none;
+  cursor: default;
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+
+.tiro {
+  position: absolute;
+  width: 20px;
+  height: 10px;
+  background: rgb(247, 231, 10);
+  border-radius: 4px;
+  bottom: 120px; 
+  left: 100px;   
+  z-index: 7;
+  pointer-events: none;
+  animation: tiroAnim 0.4s forwards;
+}
+
+@keyframes tiroAnim {
+  from {
+    left: 100px;
+    opacity: 1;
+  }
+  to {
+    left: 400px;
+    opacity: 0;
+  }
+}
+
+
+.descricao-jogo {
+  width: 90%;
+  max-width: 900px;
+  margin: 10px auto 40px auto;
+  font-size: 0.9rem;
+  color: #ddd;
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  user-select: none;
+  opacity: 0.7;
+}
+
+
+@keyframes pulo{
+  0%{bottom:0}
+  40%,50%,60%{bottom: 190px;}
+  100%{bottom:0}
+}
+@keyframes nuvens{
+  from{right:-30%}
+  to{right:100%}
+}
+@keyframes obstaculos{
+  from{left:100%}
+  to{left:-120px}
+}
+
+
+@media (max-width:600px){
+  .mario{width:80px; left:20px}
+  .obstaculos{width:60px}
+  .overlay h1{font-size:2rem}
+}

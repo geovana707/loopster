@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Super Mario Jump</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="overlay abertura" id="telaAbertura">
+    <h1>Super Mario Jump</h1>
+    <p>Pressione Iniciar ou tecla Espaço para começar</p>
+    <button id="btnIniciar" class="btn">Iniciar</button>
+  </div>
+
+  <main class="jogo">
+    <img src="img/5.png" alt="mario" class="mario" id="mario">
+    <img src="img/1000074720.png"  alt="Obstáculo" class="obstaculos" id="obstaculos" >
+    <img src="img/1000074716.png" alt="Nuvens" class="nuvens" id="nuvens" >
+    <img src="img/1000074719.png"  alt="Moeda" class="moeda" id="moeda">
+
+  
+
+
+    <div class="hud">
+      <span id="score">0</span>
+    </div>
+  </main>
+
+  <div class="hud">
+  <span id="score">0</span> | <span id="recorde">Recorde: 0</span>
+</div>
+
+
+  <div class="overlay final" id="telaFinal" aria-hidden="true">
+    <h1>Game Over</h1>
+    <p>Sua pontuação: <strong id="scoreFinal">0</strong></p>
+    <button id="btnReiniciar" class="btn">Reiniciar</button>
+  </div>
+   
+  <div class="descricao-jogo">
+  <p>
+    Controle o Mario, pule obstáculos com <strong>Espaço</strong> e <strong>Seta para cima</strong>. Use <strong>Z</strong> para atirar no Rei Boo e ganhar pontos extras. Chegue o mais longe que puder!
+  </p>
+</div>
+
+
+  <script src="INDEX.JS"></script>
+</body>
+</html>
