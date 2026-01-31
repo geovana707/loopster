@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Super Mario Jump</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="overlay abertura" id="telaAbertura">
+    <h1>Super Mario Jump</h1>
+    <p style="margin-bottom: 15px;">Desvie dos obstáculos e inimigos!</p>
+    
+    <div style="text-align: left; background: rgba(0,0,0,0.3); padding: 15px; border-radius: 8px; margin-bottom: 20px; max-width: 400px;">
+      <h3 style="margin-bottom: 10px; text-align: center;">⚡ Controles</h3>
+      <p style="margin: 5px 0;">🎮 <strong>Espaço</strong> ou <strong>Seta ↑</strong> - Pular</p>
+      <p style="margin: 5px 0;">⬇️ <strong>Seta ↓</strong> ou <strong>S</strong> - Abaixar</p>
+      <p style="margin: 5px 0;">🔫 <strong>Z</strong> - Atirar</p>
+      
+      <h3 style="margin: 15px 0 10px 0; text-align: center;">🎯 Pontuação</h3>
+      <p style="margin: 5px 0;">💀 Eliminar inimigo = <strong>+30 pontos</strong></p>
+      <p style="margin: 5px 0;">💰 Acertar a bolha = <strong>+50 pontos</strong></p>
+      <p style="margin: 5px 0;">⏱️ Sobreviver = <strong>+1 ponto/segundo</strong></p>
+      
+      <h3 style="margin: 15px 0 10px 0; text-align: center;">⚠️ Importante</h3>
+      <p style="margin: 5px 0;">• O tiro acerta <strong>apenas um alvo</strong></p>
+      <p style="margin: 5px 0;">• Abaixe para evitar inimigos aéreos</p>
+      <p style="margin: 5px 0;">• Pule para desviar de obstáculos terrestres</p>
+    </div>
+    
+    <button id="btnIniciar" class="btn">Iniciar Jogo</button>
+  </div>
+
+  <main class="jogo">
+    <img src="img/5.png" alt="mario" class="mario" id="mario">
+    <img src="img/1000074720.png"  alt="Obstáculo" class="obstaculos" id="obstaculos" >
+    <img src="img/1000074716.png" alt="Nuvens" class="nuvens" id="nuvens" >
+    <img src="img/1000074719.png"  alt="Moeda" class="moeda" id="moeda">
+
+    <img src="img/inimigo-2d-escorpio-preto-patas-articuladas.png" alt="Inimigo Terrestre" class="inimigo-terrestre" id="inimigoTerrestre">
+    <img src="img/inimigo-areo-pixelado-para-game-2d-asas-metlicas.png" alt="Inimigo Aéreo" class="inimigo-aereo" id="inimigoAereo">
+
+    <div class="hud">
+      <span id="score">0</span>
+    </div>
+  </main>
+
+  <div class="hud">
+  <span id="score">0</span> | <span id="recorde">Recorde: 0</span>
+</div>
+
+
+  <div class="overlay final" id="telaFinal" aria-hidden="true">
+    <h1>Game Over</h1>
+    <p>Sua pontuação: <strong id="scoreFinal">0</strong></p>
+    <button id="btnReiniciar" class="btn">Reiniciar</button>
+  </div>
+   
+
+  <script src="INDEX.JS"></script>
+</body>
+</html>
+
